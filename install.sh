@@ -2,7 +2,7 @@ echo '\n\n\napt 安裝基礎包'
 sleep 2
 apt update
 apt upgrade  -y
-apt install curl wget vim git net-tools iproute2 iputils-ping  python python3 fish  -y
+apt install curl wget vim git net-tools iproute2 iputils-ping  python python3 fish htop  -y
 
 echo '\n\n\napt 配置fish'
 sleep 2
@@ -23,7 +23,7 @@ export PATH=/root/opt/node/bin:$PATH
 
 echo '\n\n\n  * npm 全局安裝常用工具'
 sleep 2
-npm install -g pm2 live-server typescript yarn nodemon
+npm install -g pm2 live-server typescript yarn nodemon n 
 
 
 
