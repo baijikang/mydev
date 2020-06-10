@@ -23,11 +23,22 @@ export PATH=/root/opt/node/bin:$PATH
 
 echo '\n\n\n  * npm 全局安裝常用工具'
 sleep 2
-npm install -g pm2 live-server typescript yarn
+npm install -g pm2 live-server typescript yarn nodemon
 
 
 
-echo '\n\n\n  * 下面請手工安裝 vim coc 插件'
+echo '\n\n\n  * 下面請手工安裝 vim coc 插件, fish 环境下运行'
 echo '        - 打開 vim '
 echo '        - 執行 :CocUpdate'
 echo '        - 執行 :CocInstall coc-css coc-html coc-java coc-json coc-python coc-tsserver coc-vetur'
+
+
+
+
+
+echo '\n\n\n  * 清理'
+echo '        - apt clean'
+echo '        - apt autoclean'
+echo '        - apt autoremove'
+echo '        - npm cache clean -f'
+echo '        - yarn cache clean -f'
