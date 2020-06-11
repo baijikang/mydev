@@ -19,7 +19,7 @@ ln -s ~/opt/node/bin/node /usr/local/bin/node && \
 export PATH=/root/opt/node/bin:$PATH && \
 echo '\n\n\n  * npm 全局安裝常用工具' && \
 sleep 2 && \
-npm install -g pm2 live-server typescript yarn nodemon n  && \
+npm install -g pm2 live-server typescript yarn nodemon n @vue/cli  && \
 
 
 echo '\n\n\n  * 下面請手工安裝 vim coc 插件'
