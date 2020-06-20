@@ -2,7 +2,7 @@ echo '\n\n\napt 安裝基礎包'                                                
 sleep 2                                                                                                 && \
 apt update                                                                                              && \
 apt upgrade  -y                                                                                         && \
-apt install curl wget vim git net-tools iproute2 iputils-ping  python python3 fish htop  -y             && \
+apt install curl wget vim git net-tools iproute2 iputils-ping  python python3 fish htop axel -y         && \
 echo '\n\n\napt 配置fish'                                                                               && \
 sleep 2                                                                                                 && \
 mkdir -p  ~/.config/fish/                                                                               && \
@@ -10,7 +10,7 @@ mv config.fish ~/.config/fish/config.fish                                       
 echo '              fish 已經配置好，以後可以用 /usr/bin/fish 作爲 docker 啓動命令 '                    && \
 echo '\n\n\n  * 下載 ndoejs'                                                                            && \
 sleep 2                                                                                                 && \
-wget -c 'https://nodejs.org/dist/v14.4.0/node-v14.4.0-linux-x64.tar'                                    && \
+wget -c  'https://nodejs.org/dist/v14.4.0/node-v14.4.0-linux-x64.tar'                                   && \
 mkdir -p ~/opt/                                                                                         && \
 tar -xf node-v14.4.0-linux-x64.tar                                                                      && \
 rm node-v14.4.0-linux-x64.tar                                                                           && \
