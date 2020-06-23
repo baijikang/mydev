@@ -141,7 +141,7 @@ Plug 'mg979/vim-visual-multi/'          " ctrl + n 多光标插件，ctrl + up/d
 Plug 'MattesGroeger/vim-bookmarks'      " 书签插件
 " Plug 'isRuslan/vim-es6'                 " es6 语法
 Plug 'tpope/vim-commentary'             " 注释插件
-Plug 'neoclide/coc.nvim' , {'tag': '*', 'do': { -> coc#util#install()}}   " 代码补全工具
+Plug 'neoclide/coc.nvim', {'branch': 'release'}  " 代码补全工具
 Plug 'posva/vim-vue'                    " vue 插件
 Plug 'leafgarland/typescript-vim'
 call plug#end()
