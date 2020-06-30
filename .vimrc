@@ -135,7 +135,7 @@ Plug 'tomasr/molokai'                   " 主题插件
 Plug 'scrooloose/nerdtree'              " 左侧树插件
 Plug 'easymotion/vim-easymotion'        " 快速定位光标
 Plug 'mileszs/ack.vim'                  " 需要系统先安装 ack 如: brew install ask
-" Plug 'Yggdroot/LeaderF'                 " 模糊搜搜，ctrl 替代品
+Plug 'Yggdroot/LeaderF'                 " 模糊搜搜，ctrl 替代品
 Plug 'mg979/vim-visual-multi/'          " ctrl + n 多光标插件，ctrl + up/down 多光标 , ctrl+b 多选相同单词
 " Plug 'vim-airline/vim-airline'          " 底栏增强
 Plug 'MattesGroeger/vim-bookmarks'      " 书签插件

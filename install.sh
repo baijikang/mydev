@@ -2,7 +2,7 @@ echo '\n\n\napt 安裝基礎包'                                                
 sleep 2                                                                                                 && \
 apt update                                                                                              && \
 apt upgrade  -y                                                                                         && \
-apt install curl wget vim git net-tools iproute2 iputils-ping  python python3 fish htop axel screen -y  && \
+apt tree install curl wget vim git net-tools iproute2 iputils-ping  python python3 fish htop axel screen ack -y  && \
 echo '\n\n\napt 配置fish'                                                                               && \
 sleep 2                                                                                                 && \
 mkdir -p  ~/.config/fish/                                                                               && \
