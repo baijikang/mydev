@@ -33,7 +33,7 @@ function gst
 end
 
 function glg
-  git log --stat $argv[0]
+  git log --stat $argv[1]
 end
 
 function gd
