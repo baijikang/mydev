@@ -1,0 +1,6 @@
+-i
+--ignore-dir=node_modules
+--ignore-dir=.git
+--ignore-dir=dist
+--ignore-dir=mockServer
+--ignore-file=match:/\.lock$|\.log$/

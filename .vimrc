@@ -107,7 +107,8 @@ vnoremap 1jj :join<CR>
 
 cnoremap 1js setfiletype javascript
 cnoremap 1html setfiletype html
-cnoremap 1ack Ack! -i --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=dist --ignore-dir=mockServer  
+cnoremap 1ack Ack! 
+cmap 1h5  <ESC>ihtml:5<C-y>,
 cnoremap 1css setfiletype css
 cnoremap 1nnn <backspace><backspace><backspace><backspace><backspace> let i=1 \| '<,'>g/1/ s//\=i/ \| let i+=1  
 cnoremap <C-l> <Right>
@@ -144,6 +145,7 @@ Plug 'tpope/vim-commentary'             " 注释插件
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " 代码补全工具
 Plug 'posva/vim-vue'                    " vue 插件
 Plug 'leafgarland/typescript-vim'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 
