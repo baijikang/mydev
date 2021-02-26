@@ -1,6 +1,9 @@
 FROM ubuntu
 
 COPY .vimrc /root/
+COPY .tmux.conf /root/
+COPY .vim /root/.vim
+COPY fzf-preview /root/fzf-preview
 COPY .ackrc /root/
 COPY config.fish /root/
 COPY .npmrc /root/

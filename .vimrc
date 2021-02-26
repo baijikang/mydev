@@ -33,7 +33,7 @@ set expandtab           "
 set nrformats=          " 
 set noswapfile          " 禁止产生临时交互文件
 set noautochdir         " 不自动改变 vim 工作目录
-autocmd InsertEnter,InsertLeave * set cul!  " insert 模式下，高亮行
+" autocmd InsertEnter,InsertLeave * set cul!  " insert 模式下，高亮行
 " ********************************************  基础配置 ********************************************  
 
 
@@ -51,13 +51,17 @@ noremap <S-h> vh
 noremap <S-j> vj
 noremap <S-k> vk
 noremap <C-s> :w<CR>
+noremap <C-f> :Rg 
 noremap <F8> <C-w>\|<C-w>_
 noremap <S-F8> <C-w>=
 noremap <F4> :terminal<CR>
 noremap <F12> :tabnew<CR>
 noremap <F10> :tabp<CR>
 noremap <F11> :tabn<CR>
-noremap tt yyp<ESC>a/<ESC>f <ESC>C><ESC>O
+noremap <C-p> :Files<CR>
+" noremap tt yyp<ESC>a/<ESC>f <ESC>C><ESC>O
+noremap tt :call emmet#expandAbbr(3,"")<CR>i<CR><ESC>
+noremap tt :Emmet 
 noremap {{ vi{=
 noremap __ vg_
 noremap ( viwc(<ESC>pa)<ESC>
@@ -65,7 +69,7 @@ noremap ' viwc'<ESC>pa'<ESC>
 noremap " viwc"<ESC>pa"<ESC>
 noremap "P "0p
 noremap S c^
-noremap <C-p>  :LeaderfFile<CR>
+" noremap <C-p>  :LeaderfFile<CR>
 
 
 " 调节窗口
@@ -107,14 +111,14 @@ vnoremap 1jj :join<CR>
 
 cnoremap 1js setfiletype javascript
 cnoremap 1html setfiletype html
-cnoremap 1ack Ack! 
+" cnoremap 1ack Ack! 
 cmap 1h5  <ESC>ihtml:5<C-y>,
 cnoremap 1css setfiletype css
 cnoremap 1nnn <backspace><backspace><backspace><backspace><backspace> let i=1 \| '<,'>g/1/ s//\=i/ \| let i+=1  
 cnoremap <C-l> <Right>
 cnoremap <C-h> <Left>
 
-map <C-f> +
+" map <C-f> +
 map <space><space> <Plug>(easymotion-s)
 map <C-j> <Plug>(easymotion-j)
 map <C-k> <Plug>(easymotion-k)
@@ -131,28 +135,30 @@ map <C-k> <Plug>(easymotion-k)
 
 call plug#begin('~/.vim/plugged')
 Plug 'tomasr/molokai'                   " 主题插件
-" Plug 'altercation/vim-colors-solarized' " 主题插件
-" Plug 'kien/ctrlp.vim'                   " mac 上不用，给不支持 Leaderf 的 centos 用
 Plug 'scrooloose/nerdtree'              " 左侧树插件
 Plug 'easymotion/vim-easymotion'        " 快速定位光标
-Plug 'mileszs/ack.vim'                  " 需要系统先安装 ack 如: brew install ask
-Plug 'Yggdroot/LeaderF'                 " 模糊搜搜，ctrl 替代品
 Plug 'mg979/vim-visual-multi/'          " ctrl + n 多光标插件，ctrl + up/down 多光标 , ctrl+b 多选相同单词
-" Plug 'vim-airline/vim-airline'          " 底栏增强
 Plug 'MattesGroeger/vim-bookmarks'      " 书签插件
-" Plug 'isRuslan/vim-es6'                 " es6 语法
 Plug 'tpope/vim-commentary'             " 注释插件
-Plug 'neoclide/coc.nvim', {'branch': 'release'}  " 代码补全工具
+Plug 'neoclide/coc.nvim' , {'branch': 'release'}  " 代码补全工具
 Plug 'posva/vim-vue'                    " vue 插件
-Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf.vim'
+
+" Plug 'altercation/vim-colors-solarized' " 主题插件
+" Plug 'kien/ctrlp.vim'                   " mac 上不用，给不支持 Leaderf 的 centos 用
+" Plug 'mileszs/ack.vim'                  " 需要系统先安装 ack 如: brew install ask
+" Plug 'Yggdroot/LeaderF'                 " 模糊搜搜，ctrl 替代品
+" Plug 'vim-airline/vim-airline'          " 底栏增强
+" Plug 'isRuslan/vim-es6'                 " es6 语法
 call plug#end()
 
 
 
 " 关于插件的设置，要放在插件之后，否不生效
 colorscheme molokai
-" colorscheme delek
+" colorscheme desert
 let g:molokai_original = 1
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
@@ -168,6 +174,7 @@ hi TabLine ctermfg=52 ctermbg=grey
 
 " 文本选中颜色
 hi Visual ctermbg=24
+set cursorline
 hi CursorLine ctermbg=236
 hi MatchParen ctermbg=24 ctermfg=white
 
@@ -192,12 +199,8 @@ let g:airline_section_statistics=''
 let g:coc_node_path = '/usr/local/bin/node'
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-" ctrl+p 配置 , 留着，给不支持 Leaderf 的 centos 用
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$|node_modules|dist|temp_publish'
-
 " vim-visual-multi 相关设置
 let g:VM_maps = {}
 let g:VM_maps["Select Cursor Down"]='<C-j>'
 let g:VM_maps["Select Cursor Up"]='<C-k>'
 " let g:VM_maps["Select All"]='<C-a>' // 有冲突，先禁用
-
