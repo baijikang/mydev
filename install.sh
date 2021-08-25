@@ -11,18 +11,19 @@ mv config.fish ~/.config/fish/config.fish                                       
 echo '              fish 已經配置好，以後可以用 /usr/bin/fish 作爲 docker 啓動命令 '                    && \
 echo '\n\n\n  * 下載 ndoejs'                                                                            && \
 sleep 2                                                                                                 && \
-wget -c  'https://npm.taobao.org/mirrors/node/v14.16.0/node-v14.16.0-linux-x64.tar.gz'                  && \
+wget -c  'https://npm.taobao.org/mirrors/node/v16.7.0/node-v16.7.0-linux-x64.tar.gz'                  && \
 mkdir -p ~/opt/                                                                                         && \
-tar -xf node-v14.16.0-linux-x64.tar.gz                                                                  && \
-rm node-v14.16.0-linux-x64.tar.gz                                                                       && \
-mv node-v14.16.0-linux-x64 ~/opt/node                                                                   && \
+tar -xf node-v16.7.0-linux-x64.tar.gz                                                                  && \
+rm node-v16.7.0-linux-x64.tar.gz                                                                       && \
+mv node-v16.7.0-linux-x64 ~/opt/node                                                                   && \
 ln -s ~/opt/node/bin/node /usr/local/bin/node                                                           && \
 ln -s /usr/bin/batcat /usr/bin/bat
 export PATH=/root/opt/node/bin:$PATH                                                                    && \
 echo '\n\n\n  * npm 全局安裝常用工具'                                                                   && \
 sleep 2                                                                                                 && \
-npm install -g yarn                                                                                     && \
-yarn global add pm2 live-server typescript nodemon n @vue/cli                                           && \
+npm config set strict-ssl false                                                                         && \ 
+npm install -g yarn                                                                                     && \ 
+yarn global add pm2 live-server typescript nodemon n ts-node @vue/cli                                   && \
 
 
 echo '\n\n\n  * 下面請手工安裝 vim coc 插件'                                                                                                && \
